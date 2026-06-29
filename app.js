@@ -102,7 +102,7 @@ function generatedEntry(industry) {
       },
     ],
     solutions: genericSolutions,
-    cta: "获取完整行业 GEO 需求分析",
+    cta: "了解完整解决方案",
   };
 }
 
@@ -128,7 +128,7 @@ async function analyzeIndustry(industry, email, consent) {
     summary: entry.summary || "",
     signals: entry.signals || [],
     solutions: entry.solutions || genericSolutions,
-    cta: entry.cta || "获取完整行业 GEO 需求分析",
+    cta: entry.cta || "了解完整解决方案",
     source,
     generatedAt: new Date().toISOString(),
   };
@@ -138,7 +138,7 @@ function renderResult(data) {
   resultHeadline.textContent = data.headline || "你的客户在 AI 搜索中暴露出的需求信号";
   resultSummary.textContent = data.summary || "";
   resultSource.textContent = data.source === "cached" ? "行业库匹配" : "即时生成";
-  ctaText.textContent = data.cta || "获取完整行业 GEO 需求分析";
+  ctaText.textContent = data.cta || "了解完整解决方案";
 
   signalList.innerHTML = (data.signals || [])
     .map((item, index) => {
