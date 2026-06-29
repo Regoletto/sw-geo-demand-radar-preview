@@ -8,34 +8,14 @@
   </head>
   <body>
     <main class="page-shell">
-      <section class="hero-panel">
-        <div class="hero-copy">
-          <p class="brand-kicker">SOLIDWORKS GEO Demand Radar</p>
-          <h1>用 GEO 找出客户需求</h1>
-          <p class="hero-lede">
-            输入你的行业，查看你的客户在 AI 搜索中暴露出的需求信号、背后的采购顾虑，以及 SOLIDWORKS 可对应的解决方案。
-          </p>
-        </div>
-        <div class="engineering-visual" aria-hidden="true">
-          <div class="visual-image"></div>
-          <div class="signal-card card-a">
-            <span>AI Search Signal</span>
-            <strong>行业问题识别中</strong>
-          </div>
-          <div class="signal-card card-b">
-            <span>SW Solution Map</span>
-            <strong>方案匹配</strong>
-          </div>
-        </div>
-      </section>
+      <section class="landing-hero">
+        <p class="brand-kicker">SOLIDWORKS GEO Demand Radar</p>
+        <h1>用 GEO 找出客户需求</h1>
+        <p class="hero-lede">
+          输入你的行业，查看你的客户在 AI 搜索中暴露出的需求信号、采购顾虑，以及 SOLIDWORKS 可对应的解决方案。
+        </p>
 
-      <section class="masonry-board" aria-label="GEO 行业需求分析工具">
-        <form class="input-panel masonry-item masonry-large" id="radarForm">
-          <div class="panel-heading">
-            <p>开始分析</p>
-            <h2>输入行业，生成需求洞察</h2>
-          </div>
-
+        <form class="input-panel" id="radarForm">
           <label class="field">
             <span>行业</span>
             <input
@@ -68,69 +48,7 @@
           <button class="primary-button" type="submit">
             <span>查看行业需求</span>
           </button>
-
-          <p class="form-note">
-            本工具用于营销互动和初步需求启发；完整 GEO 分析可由顾问团队进一步确认。
-          </p>
         </form>
-
-        <article class="masonry-item sample-card dark-card">
-          <p class="tile-kicker">客户可能会问</p>
-          <h2>工厂想上机器人，怎么选型号？</h2>
-          <p>短句、真实、像客户会直接丢进 AI 的问题。</p>
-        </article>
-
-        <article class="masonry-item sample-card red-card">
-          <p class="tile-kicker">GEO 信号</p>
-          <h2>不是问技术参数，而是在问采购风险。</h2>
-        </article>
-
-        <aside class="method-panel masonry-item masonry-tall">
-          <h2>分析流程</h2>
-          <ol class="method-list">
-            <li>
-              <span>01</span>
-              <div>
-                <strong>识别行业场景</strong>
-                <p>将输入行业扩展到具体应用、客户角色和工程场景。</p>
-              </div>
-            </li>
-            <li>
-              <span>02</span>
-              <div>
-                <strong>分析 AI 问答需求</strong>
-                <p>模拟你的客户在 AI 搜索中可能提出的采购、比较和使用问题。</p>
-              </div>
-            </li>
-            <li>
-              <span>03</span>
-              <div>
-                <strong>归纳客户顾虑</strong>
-                <p>把问题翻译成客户在采购、比较、使用和维护时真正担心的事。</p>
-              </div>
-            </li>
-            <li>
-              <span>04</span>
-              <div>
-                <strong>匹配 SW 方案</strong>
-                <p>连接到 SOLIDWORKS 与 3DEXPERIENCE Works 的可沟通价值。</p>
-              </div>
-            </li>
-          </ol>
-        </aside>
-
-        <article class="masonry-item sample-card outline-card">
-          <p class="tile-kicker">输出结果</p>
-          <h2>客户问题、采购顾虑、SW 对应方案</h2>
-          <p>把 AI 搜索里的需求信号，转成销售和市场团队能继续使用的行业洞察。</p>
-        </article>
-
-        <article class="masonry-item sample-card image-card">
-          <div>
-            <p class="tile-kicker">Solution Map</p>
-            <h2>从客户顾虑接到工程方案</h2>
-          </div>
-        </article>
       </section>
 
       <section class="progress-panel hidden" id="progressPanel" aria-live="polite">
@@ -156,8 +74,8 @@
           <span id="resultSource" class="source-pill">行业库匹配</span>
         </div>
         <p class="result-summary" id="resultSummary"></p>
-        <div class="signal-list masonry-results" id="signalList"></div>
-        <div class="solution-strip solution-masonry" id="solutionStrip"></div>
+        <div class="signal-list" id="signalList"></div>
+        <div class="solution-strip" id="solutionStrip"></div>
         <div class="result-cta">
           <div>
             <strong id="ctaText">获取完整行业 GEO 需求分析</strong>

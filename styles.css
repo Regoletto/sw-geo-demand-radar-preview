@@ -8,8 +8,7 @@
   --white: #ffffff;
   --cyan: #00a7b5;
   --steel: #69727b;
-  --soft-red: #fff0f0;
-  --shadow: 0 28px 80px rgba(16, 24, 32, 0.16);
+  --shadow: 0 28px 80px rgba(16, 24, 32, 0.14);
 }
 
 * {
@@ -21,58 +20,46 @@ body {
   color: var(--ink);
   font-family: "Aptos", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   background:
-    radial-gradient(circle at 18% 8%, rgba(215, 25, 32, 0.12), transparent 28%),
-    linear-gradient(90deg, rgba(22, 26, 31, 0.055) 0 1px, transparent 1px 100%),
-    linear-gradient(180deg, rgba(22, 26, 31, 0.045) 0 1px, transparent 1px 100%),
+    radial-gradient(circle at 16% 4%, rgba(215, 25, 32, 0.12), transparent 26%),
+    linear-gradient(90deg, rgba(22, 26, 31, 0.052) 0 1px, transparent 1px 100%),
+    linear-gradient(180deg, rgba(22, 26, 31, 0.042) 0 1px, transparent 1px 100%),
     var(--paper);
   background-size: auto, 44px 44px, 44px 44px, auto;
 }
 
 button,
-input,
-textarea {
+input {
   font: inherit;
 }
 
 .page-shell {
-  width: min(1220px, calc(100% - 32px));
+  width: min(880px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 60px;
+  padding: 40px 0 68px;
 }
 
-.hero-panel {
-  min-height: 430px;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(380px, 1fr);
-  gap: 0;
-  align-items: stretch;
-  background: var(--white);
-  border: 1px solid rgba(48, 54, 59, 0.13);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.hero-copy {
+.landing-hero {
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 44px;
+  padding: clamp(28px, 6vw, 58px);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.78)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(255, 255, 255, 0.86)),
     linear-gradient(90deg, rgba(215, 25, 32, 0.08) 0 1px, transparent 1px 100%);
   background-size: auto, 34px 34px;
+  border: 1px solid rgba(48, 54, 59, 0.13);
+  box-shadow: var(--shadow);
 }
 
 .brand-kicker,
-.panel-heading p,
 .progress-copy p,
-.result-heading p,
-.tile-kicker {
-  margin: 0 0 10px;
+.result-heading p {
+  margin: 0 0 14px;
   color: var(--sw-red);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
@@ -84,132 +71,31 @@ p {
 }
 
 h1 {
-  max-width: 620px;
-  margin-bottom: 20px;
+  max-width: 760px;
+  margin-bottom: 22px;
   font-family: Georgia, "Times New Roman", "Songti SC", serif;
-  font-size: clamp(48px, 8vw, 94px);
+  font-size: clamp(52px, 10vw, 108px);
   line-height: 0.96;
   letter-spacing: 0;
 }
 
 .hero-lede {
-  max-width: 620px;
-  margin-bottom: 0;
+  max-width: 720px;
+  margin-bottom: 34px;
   color: var(--graphite);
   font-size: 19px;
   line-height: 1.75;
 }
 
-.engineering-visual {
-  position: relative;
-  min-height: 410px;
-  overflow: hidden;
-  background: #111820;
-  isolation: isolate;
-}
-
-.visual-image {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, transparent 0 44%, rgba(215, 25, 32, 0.42) 44% 56%, transparent 56% 100%),
-    radial-gradient(circle at 72% 36%, rgba(0, 167, 181, 0.24), transparent 24%),
-    linear-gradient(120deg, rgba(17, 24, 32, 0.72), rgba(17, 24, 32, 0.08) 58%, rgba(215, 25, 32, 0.28)),
-    url("https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-06/solidworks-design-domain-hero-1.jpg.webp?itok=7c1pbNiF"),
-    #111820;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.04);
-}
-
-.engineering-visual::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 58px 58px;
-  mix-blend-mode: screen;
-  opacity: 0.35;
-}
-
-.signal-card {
-  position: absolute;
-  z-index: 2;
-  width: 224px;
-  padding: 16px 18px;
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  background: rgba(17, 24, 32, 0.74);
-  backdrop-filter: blur(14px);
-}
-
-.signal-card span {
-  display: block;
-  margin-bottom: 6px;
-  color: #9be7ed;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.signal-card strong {
-  font-size: 18px;
-}
-
-.card-a {
-  top: 32px;
-  left: 28px;
-}
-
-.card-b {
-  right: 26px;
-  bottom: 28px;
-}
-
-.masonry-board {
-  column-count: 3;
-  column-gap: 18px;
-  margin-top: 22px;
-}
-
-.masonry-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 18px;
-  break-inside: avoid;
-  border: 1px solid rgba(48, 54, 59, 0.13);
-  background: var(--white);
-  box-shadow: 0 18px 44px rgba(16, 24, 32, 0.08);
-  vertical-align: top;
-}
-
 .input-panel {
-  padding: 28px;
-}
-
-.masonry-large {
-  min-height: 500px;
-}
-
-.masonry-tall {
-  min-height: 520px;
-}
-
-.panel-heading h2,
-.method-panel h2,
-.progress-copy h2,
-.result-heading h2 {
-  margin-bottom: 22px;
-  font-size: 30px;
-  line-height: 1.16;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  width: 100%;
 }
 
 .field {
   display: block;
-  margin-bottom: 18px;
 }
 
 .field span {
@@ -221,7 +107,7 @@ h1 {
 
 .field input {
   width: 100%;
-  min-height: 56px;
+  min-height: 58px;
   padding: 0 16px;
   border: 1px solid var(--line);
   border-radius: 0;
@@ -237,10 +123,11 @@ h1 {
 }
 
 .consent {
+  grid-column: 1 / -1;
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  margin: 8px 0 22px;
+  margin-top: 2px;
   color: var(--steel);
   font-size: 13px;
   line-height: 1.6;
@@ -257,10 +144,10 @@ h1 {
 .primary-button,
 .secondary-button {
   display: inline-flex;
-  min-height: 54px;
+  min-height: 56px;
   align-items: center;
   justify-content: center;
-  padding: 0 22px;
+  padding: 0 24px;
   border: 0;
   background: var(--sw-red);
   color: var(--white);
@@ -271,6 +158,7 @@ h1 {
 }
 
 .primary-button {
+  grid-column: 1 / -1;
   width: 100%;
 }
 
@@ -280,142 +168,20 @@ h1 {
   background: var(--deep-red);
 }
 
-.form-note {
-  margin: 18px 0 0;
-  color: var(--steel);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.method-panel {
-  padding: 28px;
-}
-
-.method-list {
-  display: grid;
-  gap: 18px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.method-list li {
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 14px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-}
-
-.method-list li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.method-list span {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  align-items: center;
-  justify-content: center;
-  background: var(--ink);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.method-list strong {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.method-list p {
-  margin: 0;
-  color: var(--steel);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.sample-card {
-  padding: 24px;
-  min-height: 220px;
-}
-
-.sample-card h2 {
-  margin-bottom: 12px;
-  font-size: 26px;
-  line-height: 1.18;
-}
-
-.sample-card p:last-child {
-  margin-bottom: 0;
-  color: var(--steel);
-  line-height: 1.65;
-}
-
-.dark-card {
-  min-height: 300px;
-  background:
-    linear-gradient(135deg, rgba(22, 26, 31, 0.94), rgba(22, 26, 31, 0.74)),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: auto, 28px 28px;
-  color: var(--white);
-}
-
-.dark-card p:last-child {
-  color: #dfe6eb;
-}
-
-.red-card {
-  min-height: 260px;
-  background: var(--sw-red);
-  color: var(--white);
-}
-
-.red-card .tile-kicker,
-.dark-card .tile-kicker,
-.image-card .tile-kicker {
-  color: #9be7ed;
-}
-
-.red-card h2 {
-  font-size: 30px;
-}
-
-.outline-card {
-  min-height: 250px;
-  background: #fbfbf8;
-  border-left: 8px solid var(--sw-red);
-}
-
-.image-card {
-  min-height: 360px;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, transparent 0 42%, rgba(215, 25, 32, 0.52) 42% 52%, transparent 52% 100%),
-    radial-gradient(circle at 74% 26%, rgba(0, 167, 181, 0.22), transparent 26%),
-    linear-gradient(180deg, rgba(22, 26, 31, 0.04), rgba(22, 26, 31, 0.72)),
-    url("https://www.solidworks.com/sites/default/filesd10/styles/webp/public/migration/2022-12/solidworks-customer-stories-hero.jpg.webp?itok=__D_c7-j"),
-    #252b30;
-  background-size: cover;
-  background-position: center;
-}
-
-.image-card h2 {
-  max-width: 260px;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.36);
-}
-
 .progress-panel,
 .result-panel {
-  margin-top: 24px;
+  margin-top: 22px;
   padding: 28px;
   background: var(--white);
   border: 1px solid rgba(48, 54, 59, 0.13);
   box-shadow: 0 18px 44px rgba(16, 24, 32, 0.08);
+}
+
+.progress-copy h2,
+.result-heading h2 {
+  margin-bottom: 22px;
+  font-size: 30px;
+  line-height: 1.16;
 }
 
 .progress-track {
@@ -445,10 +211,6 @@ h1 {
   font-weight: 900;
 }
 
-.result-heading {
-  position: relative;
-}
-
 .source-pill {
   display: inline-flex;
   margin-bottom: 14px;
@@ -460,59 +222,47 @@ h1 {
 }
 
 .result-summary {
-  max-width: 900px;
+  max-width: 760px;
   color: var(--graphite);
   font-size: 17px;
   line-height: 1.75;
 }
 
-.masonry-results {
-  column-count: 2;
-  column-gap: 18px;
+.signal-list {
+  display: grid;
+  gap: 16px;
   margin-top: 22px;
 }
 
 .signal-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 18px;
-  padding: 24px;
-  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  padding: 22px;
   border: 1px solid var(--line);
   background: #fbfbf8;
-  vertical-align: top;
-}
-
-.signal-item:nth-child(2) {
-  padding-bottom: 48px;
-  background: var(--soft-red);
-}
-
-.signal-item:nth-child(3) {
-  padding-top: 36px;
 }
 
 .signal-index {
   display: flex;
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
   background: var(--sw-red);
   color: var(--white);
   font-weight: 900;
 }
 
 .signal-item h3 {
-  margin: 0 0 18px;
-  font-size: 26px;
-  line-height: 1.22;
+  margin: 0 0 14px;
+  font-size: 23px;
+  line-height: 1.28;
 }
 
 .signal-item dl {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   margin: 0;
 }
 
@@ -528,25 +278,17 @@ h1 {
   line-height: 1.68;
 }
 
-.solution-masonry {
-  column-count: 3;
-  column-gap: 14px;
+.solution-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
   margin-top: 22px;
 }
 
 .solution-item {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 14px;
   padding: 22px;
-  break-inside: avoid;
   background: var(--ink);
   color: var(--white);
-}
-
-.solution-item:nth-child(2) {
-  padding-bottom: 42px;
-  background: #26313a;
 }
 
 .solution-item h3 {
@@ -588,31 +330,32 @@ h1 {
   display: none;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 760px) {
   .page-shell {
-    width: min(100% - 20px, 720px);
-    padding-top: 10px;
+    width: min(100% - 20px, 560px);
+    padding: 10px 0 44px;
   }
 
-  .hero-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
+  .landing-hero {
+    min-height: auto;
     padding: 28px;
   }
 
-  .engineering-visual {
-    min-height: 280px;
+  h1 {
+    font-size: clamp(48px, 18vw, 72px);
   }
 
-  .masonry-board,
-  .masonry-results,
-  .solution-masonry {
-    column-count: 1;
+  .hero-lede {
+    font-size: 17px;
   }
 
-  .progress-steps {
+  .input-panel,
+  .progress-steps,
+  .solution-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .signal-item {
     grid-template-columns: 1fr;
   }
 
