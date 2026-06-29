@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>用 GEO 找出客户需求 | SOLIDWORKS</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260629-3" />
   </head>
   <body>
     <main class="page-shell">
@@ -51,6 +51,49 @@
         </form>
       </section>
 
+      <section class="waterfall-section" aria-label="GEO 需求雷达输出说明">
+        <div class="section-heading">
+          <p class="brand-kicker">GEO insight flow</p>
+          <h2>从客户提问，拆出真实采购顾虑</h2>
+        </div>
+
+        <div class="waterfall-grid">
+          <article class="waterfall-card question-card">
+            <p class="tile-kicker">客户可能会问</p>
+            <h3>工厂想上机器人，怎么判断适不适合自己的产线？</h3>
+            <p>问题会尽量像真实客户丢给 AI 的短句，而不是工程报告标题。</p>
+          </article>
+
+          <article class="waterfall-card red-card">
+            <p class="tile-kicker">GEO 信号</p>
+            <h3>客户不是先问参数，而是在确认采购风险。</h3>
+          </article>
+
+          <article class="waterfall-card method-card">
+            <h3>分析流程</h3>
+            <ol>
+              <li><span>01</span>识别行业场景</li>
+              <li><span>02</span>模拟 AI 搜索问题</li>
+              <li><span>03</span>归纳客户顾虑</li>
+              <li><span>04</span>匹配 SW 方案</li>
+            </ol>
+          </article>
+
+          <article class="waterfall-card outline-card">
+            <p class="tile-kicker">输出结果</p>
+            <h3>客户问题、采购顾虑、SOLIDWORKS 对应方案</h3>
+            <p>把 AI 搜索里的需求信号，转成销售和市场团队能继续使用的行业洞察。</p>
+          </article>
+
+          <article class="waterfall-card visual-card">
+            <div>
+              <p class="tile-kicker">Solution map</p>
+              <h3>从客户顾虑接到工程方案</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="progress-panel hidden" id="progressPanel" aria-live="polite">
         <div class="progress-copy">
           <p>GEO 需求雷达运行中</p>
@@ -86,6 +129,6 @@
       </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=20260629-3"></script>
   </body>
 </html>
